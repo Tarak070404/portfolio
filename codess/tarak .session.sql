@@ -1,0 +1,1 @@
+alter TABLE learn modify column (s_name  int(20) primary key);

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarak - Profile</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 1em;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        background-color: #444;
+        padding: 10px;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      section {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: #333;
+      }
+
+      p {
+        line-height: 1.6;
+        color: #666;
+      }
+
+      img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+
+      .contact-info,
+      .social-media {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .social-media a {
+        margin: 5px 0;
+      }
+
+      button {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      button:hover {
+        background-color: #555;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #333;
+        color: #fff;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+
+      @media (max-width: 600px) {
+        nav {
+          flex-direction: column;
+        }
+
+        nav a {
+          margin: 5px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Tarak's Profile</h1>
+    </header>
+
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#contact">Contact</a>
+      <a href="#social">Social Media</a>
+    </nav>
+
+    <section id="about">
+      <img src="tarak.jpeg" alt="Profile Picture" />
+      <h2>About Me</h2>
+      <p>
+        Hi there! I'm Tarak, currently studying at Gitam University. I'm
+        passionate about exploring new places and experiencing different
+        cultures. Traveling has always been a source of inspiration for me,
+        allowing me to broaden my horizons and gain a deeper understanding of
+        the world.
+      </p>
+
+      <p>
+        Apart from my academic pursuits, music holds a special place in my
+        heart. Whether it's discovering new genres or attending live
+        performances, I find joy and solace in the rhythm and melodies that
+        music brings. It's my go-to companion for both relaxation and
+        motivation.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Information</h2>
+      <div class="contact-info">
+        <h3>Contact: 7093852183</h3>
+        <p>Email: <a href="mailto:rtaraka@gitam.in">rtaraka@gitam.in</a></p>
+        <p>Location: Vizag, India</p>
+      </div>
+    </section>
+
+    <section id="social">
+      <h2>Social Media</h2>
+      <div class="social-media">
+        <a href="https://twitter.com/your_twitter" target="_blank">Twitter</a>
+        <a href="https://www.linkedin.com/in/your_linkedin" target="_blank"
+          >LinkedIn</a
+        >
+        <a href="https://github.com/your_github" target="_blank">GitHub</a>
+      </div>
+      <button onclick="document.location='book.html'">Ebook</button>
+      <button onclick="document.location='time_table.html'">Time Table</button>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Tarak's Profile</p>
+    </footer>
+  </body>
+</html>

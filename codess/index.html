@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarak - Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #121212;
+        color: #e0e0e0;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      header {
+        background-color: #1f1f1f;
+        color: #e0e0e0;
+        text-align: center;
+        padding: 2em 1em;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.5em;
+      }
+
+      .box-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .box {
+        background-color: #1f1f1f;
+        border-radius: 4px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+        width: 300px;
+        padding: 10px;
+        text-align: center;
+        position: relative;
+      }
+
+      .box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .box h2 {
+        color: #ff6f61;
+        margin: 10px 0;
+      }
+
+      .box p {
+        color: #cfcfcf;
+        line-height: 1.6;
+        margin: 10px 0;
+      }
+
+      .box img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(255, 111, 97, 0.5);
+        transition: transform 0.3s, box-shadow 0.3s;
+        margin: 0 auto 10px;
+      }
+
+      .box img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 15px rgba(255, 111, 97, 0.7),
+          0 0 25px rgba(255, 111, 97, 0.7);
+      }
+
+      .social-media a {
+        color: #ff6f61;
+        text-decoration: none;
+        margin: 0 5px;
+        font-size: 1.2em;
+        transition: color 0.3s, text-shadow 0.3s;
+      }
+
+      .social-media a:hover {
+        color: #ff6f61;
+        text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61, 0 0 30px #ff6f61;
+      }
+
+      .skills-list {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+        margin: 10px 0;
+      }
+
+      .skills-list li {
+        background-color: #2c2c2c;
+        margin: 5px 0;
+        padding: 5px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s, box-shadow 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .skills-list li:hover {
+        background-color: #333;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      .progress-bar {
+        background-color: #444;
+        border-radius: 4px;
+        overflow: hidden;
+        width: 70%;
+        margin-left: 10px;
+      }
+
+      .progress {
+        background: linear-gradient(45deg, #ff6f61, #ff9068);
+        height: 100%;
+        border-radius: 4px;
+        transition: width 0.3s;
+      }
+
+      button {
+        background: linear-gradient(45deg, #ff6f61, #ff9068);
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: background 0.3s, box-shadow 0.3s;
+      }
+
+      button:hover {
+        background: linear-gradient(45deg, #ff9068, #ff6f61);
+        box-shadow: 0 0 10px #ff9068, 0 0 20px #ff9068, 0 0 30px #ff9068;
+      }
+
+      .portfolio {
+        margin: 20px auto;
+        padding: 20px;
+        max-width: 1200px;
+      }
+
+      .portfolio h2 {
+        color: #ff6f61;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .portfolio-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .portfolio-item {
+        background-color: #1f1f1f;
+        border-radius: 4px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+        width: 300px;
+        padding: 10px;
+        text-align: center;
+        position: relative;
+      }
+
+      .portfolio-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .portfolio-item img {
+        width: 100%;
+        border-radius: 4px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        margin-bottom: 10px;
+      }
+
+      .portfolio-item img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(255, 111, 97, 0.7),
+          0 0 25px rgba(255, 111, 97, 0.7);
+      }
+
+      .portfolio-item h3 {
+        color: #ff6f61;
+        margin-bottom: 10px;
+      }
+
+      .portfolio-item p {
+        color: #cfcfcf;
+        line-height: 1.6;
+        margin: 10px 0;
+      }
+
+      .testimonials {
+        margin: 20px auto;
+        padding: 20px;
+        max-width: 1200px;
+        text-align: center;
+      }
+
+      .testimonials h2 {
+        color: #ff6f61;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .testimonial {
+        background-color: #1f1f1f;
+        border-radius: 4px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        margin: 10px auto;
+        max-width: 600px;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .testimonial:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .testimonial p {
+        color: #cfcfcf;
+        font-style: italic;
+      }
+
+      .testimonial h3 {
+        margin-top: 10px;
+        color: #ff6f61;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #1f1f1f;
+        color: #e0e0e0;
+        border-top: 1px solid #333;
+      }
+
+      @media (max-width: 768px) {
+        .box-container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .portfolio-grid {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .testimonial {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Tarak's Portfolio</h1>
+    </header>
+
+    <div class="box-container">
+      <div class="box" id="about">
+        <img src="tarak.jpeg" alt="Profile Picture" />
+        <h2>About Me</h2>
+        <p>
+          Hi there! I'm Tarak, currently studying at Gitam University. I'm
+          passionate about exploring new places and experiencing different
+          cultures. Traveling has always been a source of inspiration for me,
+          allowing me to broaden my horizons and gain a deeper understanding of
+          the world.
+        </p>
+        <p>
+          Apart from my academic pursuits, music holds a special place in my
+          heart. Whether it's discovering new genres or attending live
+          performances, I find joy and solace in the rhythm and melodies that
+          music brings. It's my go-to companion for both relaxation and
+          motivation.
+        </p>
+      </div>
+
+      <div class="box" id="contact">
+        <h2>Contact Information</h2>
+        <p><strong>Phone:</strong> 7093852183</p>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:rtaraka@gitam.in">rtaraka@gitam.in</a>
+        </p>
+        <p><strong>Location:</strong> Vizag, India</p>
+      </div>
+
+      <div class="box" id="social">
+        <h2>Social Media</h2>
+        <div class="social-media">
+          <a href="https://twitter.com/your_twitter" target="_blank">Twitter</a>
+          |
+          <a href="https://www.linkedin.com/in/your_linkedin" target="_blank"
+            >LinkedIn</a
+          >
+          |
+          <a href="https://github.com/your_github" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <div class="box" id="skills">
+        <h2>Skills</h2>
+        <p>
+          As a front-end developer, I have proficiency in the following
+          languages:
+        </p>
+        <ul class="skills-list">
+          <li>
+            Java
+            <div class="progress-bar">
+              <div class="progress" style="width: 85%"></div>
+            </div>
+          </li>
+          <li>
+            HTML
+            <div class="progress-bar">
+              <div class="progress" style="width: 95%"></div>
+            </div>
+          </li>
+          <li>
+            CSS
+            <div class="progress-bar">
+              <div class="progress" style="width: 90%"></div>
+            </div>
+          </li>
+          <li>
+            Python
+            <div class="progress-bar">
+              <div class="progress" style="width: 75%"></div>
+            </div>
+          </li>
+          <li>
+            JavaScript
+            <div class="progress-bar">
+              <div class="progress" style="width: 80%"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="portfolio">
+      <h2>Portfolio Projects</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <h3>Project 1</h3>
+          <h4>AutoStalks cars</h4>
+          <p>
+            AutoStalks is your premier online destination for all things
+            automotive, providing comprehensive resources for car enthusiasts
+            and prospective buyers. Dive into detailed reviews, high-resolution
+            images, and expert analyses of the latest car models from leading
+            manufacturers worldwide. Our platform offers an intuitive comparison
+            tool, allowing you to evaluate different vehicles side by side. Stay
+            updated with the latest automotive news, trends, and insights, and
+            discover tips and advice on car maintenance, driving safety, and
+            more. AutoStalks is dedicated to enhancing your automotive journey
+            with detailed information, expert advice, and a seamless user
+            experience.
+          </p>
+        </div>
+        <div class="portfolio-item">
+          <h3>Project 2</h3>
+          <h4>Autostalks bikes</h4>
+          <p>
+            AutoStalks is your premier online destination for all things
+            automotive and motorcycle-related, providing comprehensive resources
+            for car and bike enthusiasts and prospective buyers. Dive into
+            detailed reviews, high-resolution images, and expert analyses of the
+            latest car and bike models from leading manufacturers worldwide. Our
+            platform offers an intuitive comparison tool, allowing you to
+            evaluate different vehicles and motorcycles side by side. Stay
+            updated with the latest automotive and motorcycle news, trends, and
+            insights, and discover tips and advice on car and bike maintenance,
+            riding safety, and more. AutoStalks is dedicated to enhancing your
+            automotive and motorcycle journey with detailed information, expert
+            advice, and a seamless user experience.
+          </p>
+        </div>
+        <div class="portfolio-item">
+          <h3>Project 3</h3>
+          <h4>Autostalks Blogs</h4>
+          <p>
+            AutoStalks Blogs is your ultimate travel blog, offering inspiring
+            stories, detailed guides, and stunning photography from destinations
+            around the globe. Whether you're a seasoned traveler or planning
+            your first adventure, our blog provides invaluable tips on
+            itineraries, accommodations, local cuisine, and hidden gems.
+            Discover the best travel destinations, learn about diverse cultures,
+            and get practical advice on budget travel, packing, and travel
+            safety. Join our community of globetrotters and embark on a journey
+            to explore the world with AutoStalks Blogs as your trusted
+            companion.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Tarak's Portfolio. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

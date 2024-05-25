@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Your existing styles here */
+
+        .content {
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+    <a href="#" class="active" onclick="showContent('home')">Home</a>
+    <a href="#" onclick="showContent('contact')">Contact</a>
+    <div class="dropdown">
+        <button class="dropbtn">Projects
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="#" onclick="showContent('profile')">Profile</a>
+            <a href="#" onclick="showContent('ebook')">E book</a>
+            <a href="#" onclick="showContent('registration')">Registration page</a>
+        </div>
+    </div> 
+    <a href="#" onclick="showContent('about')">About</a>
+    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+<div class="content" id="homeContent">
+    <h2>Home Content</h2>
+    <p>This is the content for the Home page.</p>
+</div>
+
+<div class="content" id="contactContent" style="display:none;">
+    <h2>Contact Content</h2>
+    <p>This is the content for the Contact page.</p>
+</div>
+
+<div class="content" id="profileContent" style="display:none;">
+    <h2>Profile Content</h2>
+    <p>This is the content for the Profile page.</p>
+</div>
+
+<div class="content" id="ebookContent" style="display:none;">
+    <h2>E-book Content</h2>
+    <p>This is the content for the E-book page.</p>
+</div>
+
+<div class="content" id="registrationContent" style="display:none;">
+    <h2>Registration Content</h2>
+    <p>This is the content for the Registration page.</p>
+</div>
+
+<div class="content" id="aboutContent" style="display:none;">
+    <h2>About Content</h2>
+    <p>This is the content for the About page.</p>
+</div>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+
+function showContent(contentId) {
+    var contents = document.getElementsByClassName("content");
+    for (var i = 0; i < contents.length; i++) {
+        contents[i].style.display = "none";
+    }
+    document.getElementById(contentId + "Content").style.display = "block";
+}
+</script>
+
+</body>
+</html>
